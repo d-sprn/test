@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="style/all.css">
+    <title>Game</title>
+</head>
+<body>
+<div class="block">
+    <div class="player">
+        <div class="health" id="playerHealth"></div>
+        <div class="player__characters">
+            <h1>Player</h1>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menu__text"></div>
+        <div class="menu__block">
+            <h3>Block</h3>
+            <label for="block__head"><input type="radio" name="block" value="1" id="block__head">Head</label>
+            <label for="block__body"><input type="radio" name="block" value="2" id="block__body">Body</label>
+            <label for="block__legs"><input type="radio" name="block" value="3" id="block__legs">Legs</label>
+        </div>
+        <div class="menu__attack">
+            <h3>Attack</h3>
+            <label for="attack__head"><input type="radio" name="attack" value="1" id="attack__head">Head</label>
+            <label for="attack__body"><input type="radio" name="attack" value="2" id="attack__body">Body</label>
+            <label for="attack__legs"><input type="radio" name="attack" value="3" id="attack__legs">Legs</label>
+        </div>
+        <button  type="submit" id="go">Go</button>
+    </div>
+    <div class="rival">
+        <div class="health" id="rivalHealth"></div>
+        <div class="rival__characters">
+            <h1>Rival</h1>
+        </div>
+    </div>
+</div>
+
+
+<script src="scripts/app.js"></script>
+</body>
+</html>
+
+<!--onclick="attCheck()"-->
