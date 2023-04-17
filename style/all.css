@@ -1,0 +1,65 @@
+ body{
+     margin: 0;
+     font:400 14px/18px Arial;
+     color: black;
+     padding: 50px 80px;
+ }
+.block{
+    display: flex;
+    justify-content: space-between;
+}
+.player{
+    width: 110px;
+    height: 210px;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+}
+.health{
+    width: 100px;
+    height: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    align-items: center;
+    background-color: green;
+}
+.health__point{
+    width: 20px;
+    height: 8px;
+    /*background-color: darkolivegreen;*/
+    background-color: red;
+
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+}
+.menu__text{
+    width: 200px;
+    height: 20px;
+    background-color: darkgrey;
+    border: 2px solid black;
+}
+.menu__block, .menu__attack{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.rival{
+    padding: 20px;
+    width: 110px;
+    height: 210px;
+    background-color: lightblue;
+    text-align: center;
+}
+
+underfined{
+    display: none;
+}
