@@ -10,33 +10,43 @@
     <title>Game</title>
 </head>
 <body>
+<div class="logo"><h1 class="logo__heading">Player <span class="red">V</span><span class="green">S</span> Rival</h1></div>
 <div class="block">
     <div class="player">
-        <div class="health" id="playerHealth"></div>
+        <div class="health player__health" id="playerHealth"></div>
         <div class="player__characters">
             <h1>Player</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="#ffffff" fill-opacity="0"></path><g class="" transform="translate(0,0)" style=""><path d="M148.1 325c34.5-61.4-38.6-163.3-38.6-163.3s37.3 38 138.4 59.5l7.9 134.5 8-134.5c101.1-21.5 138.8-59.5 138.8-59.5S329.1 263.6 363.5 325l-86.1 62.7 108.3-47.6 62.9 25.9c-8 131.8-180.8 51.8-180.8 120.8h-24c0-69-172.37 11-180.77-120.8l62.87-25.9 108.4 47.6zM248.3 25.84l-1.7 85.86-11.4-65.26c-74 7.39-109.9 55.96-119.6 71.66l-7.6-.5c-3.5-.2-6.8 1.8-8.07 5-1.4 3.2-.7 7 1.77 9.4 0 0 50.8 48.9 152.5 67.1.5.1 1.1.1 1.6.1.6 0 1.1 0 1.6-.1C359.1 180.9 409.6 132 409.6 132c3-2.4 4-6.2 2-9.4-1-3.2-4-5.2-8-5l-7.5.5c-9.7-15.7-45.7-64.27-119.6-71.66l-11.4 65.26-1.7-85.86c-2.3-2.21-4.7-3.15-7.4-3.15-2.8 0-6.2 1.36-7.7 3.15zm94.9 88.86-4.3 28c17.2-5.9 31.4-15.6 39.1-21.7 2.2 3.1 3.8 5.8 6.3 10-20.4 14.5-63.3 39.5-128.5 51.4-65.1-11.9-108-36.9-128.5-51.4 1.9-3.3 3.9-6.9 6.3-10 7.8 6.1 21.9 15.8 39.1 21.7l-4.2-28 87.3 20.5z" fill="#000000" fill-opacity="1"></path></g></svg>
         </div>
     </div>
     <div class="menu">
-        <div class="menu__text"></div>
-        <div class="menu__block">
-            <h3>Block</h3>
-            <label for="block__head"><input type="radio" name="block" value="1" id="block__head">Head</label>
-            <label for="block__body"><input type="radio" name="block" value="2" id="block__body">Body</label>
-            <label for="block__legs"><input type="radio" name="block" value="3" id="block__legs">Legs</label>
+        <div class="menu__text" id="text"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M0 0h512v512H0z" fill="#ffffff" fill-opacity="0"></path><g class="" transform="translate(0,0)" style=""><path d="M262.406 17.188c-27.22 8.822-54.017 28.012-72.375 55.53 17.544 47.898 17.544 57.26 0 105.157 19.92 15.463 40.304 24.76 60.782 27.47-2.063-25.563-3.63-51.13 1.125-76.69-13.625-1.483-23.374-5.995-37-13.874V82.563c35.866 19.096 61.84 18.777 98.813 0v32.22c-13.364 6.497-21.886 11.16-35.25 13.218 3.614 25.568 3.48 51.15 1.375 76.72 18.644-3.265 37.236-12.113 55.5-26.845-14.353-47.897-14.355-57.26 0-105.156-16.982-28.008-47.453-46.633-72.97-55.532zm-129.594 8.218c-25.906 110.414-27.35 215.33-27.4 330.922-18.84-1.537-37.582-5.12-56.027-11.12v28.554h69.066c8.715 35.025 6.472 70.052-1.036 105.078h28.13c-7.195-35.026-8.237-70.053-.872-105.078h68.904v-28.555c-18.49 4.942-37.256 8.552-56.097 10.46.082-114.94 2.496-223.068-24.667-330.26zm89.47 202.375c0 117.27 25.517 233.342 120.155 257.97C446.62 464.716 462.72 345.374 462.72 227.78H222.28z" fill="#000000" fill-opacity="1"></path></g></svg>
+        <div class="menu__fight">
+            <div class="menu__attack">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M0 0h512v512H0z" fill="#ffffff" fill-opacity="0"></path><g class="" transform="translate(0,0)" style=""><path d="M62.5 17.28c-9.747.288-20.824 5.23-29.844 14.25-15.192 15.193-18.838 36.194-8.125 46.907 7.99 7.988 21.716 8.027 34.47 1.22 16.167 30.05 42.154 57.687 71.438 76.374-18.77 24.156-29.97 54.48-29.97 87.376h18.688c0-28.9 9.828-55.474 26.344-76.53l2.156 39.405C274.5 320.554 402.09 428.196 496.062 494.94c-65.54-95.294-176.99-224.638-288.687-348.407l-38.97-2.124c20.764-15.68 46.638-24.967 74.72-24.97V100.75c-32.2.002-61.945 10.725-85.844 28.78-18.696-29.383-46.39-55.48-76.53-71.686 6.795-12.748 6.796-26.423-1.188-34.407-4.352-4.352-10.393-6.352-17.062-6.156z" fill="#000000" fill-opacity="1"></path></g></svg>
+                <h3>Attack</h3>
+                <label for="attack__head"><input type="radio" name="attack" value="1" id="attack__head">Head</label>
+                <label for="attack__chest"><input type="radio" name="attack" value="2" id="attack__chest">Chest</label>
+                <label for="attack__body"><input type="radio" name="attack" value="3" id="attack__body">Body</label>
+                <label for="attack__legs"><input type="radio" name="attack" value="4" id="attack__legs">Legs</label>
+            </div>
+            <div class="menu__block">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M0 0h512v512H0z" fill="#ffffff" fill-opacity="0"></path><g class="" transform="translate(0,0)" style=""><path d="M48.906 19.656v10.782c0 103.173 10.53 206.07 41.313 289.53 30.78 83.463 82.763 148.094 164.53 170.563l2.188.626 2.25-.5c89.686-19.12 142.322-84.028 171.187-168.344 28.865-84.315 35.406-188.656 35.406-291.875v-10.78l-10.655 1.53C323.26 39.954 191.452 40 59.595 21.188l-10.69-1.53zM67.75 41.03c63.242 8.536 126.495 12.792 189.75 12.782v184.532h174.78c-4.905 27.572-11.31 53.747-19.592 77.937-27.348 79.884-73.757 137.33-155.157 155.564-.008-.003-.02.003-.03 0v-233.5H86.53c-12.87-60.99-18.277-128.81-18.78-197.313z" fill="#000000" fill-opacity="1"></path></g></svg>
+                <h3>Block</h3>
+                <label for="block__head"><input type="radio" name="block" value="1" id="block__head">Head</label>
+                <label for="block__chest"><input type="radio" name="block" value="2" id="block__chest">Chest</label>
+                <label for="block__body"><input type="radio" name="block" value="3" id="block__body">Body</label>
+                <label for="block__legs"><input type="radio" name="block" value="4" id="block__legs">Legs</label>
+            </div>
         </div>
-        <div class="menu__attack">
-            <h3>Attack</h3>
-            <label for="attack__head"><input type="radio" name="attack" value="1" id="attack__head">Head</label>
-            <label for="attack__body"><input type="radio" name="attack" value="2" id="attack__body">Body</label>
-            <label for="attack__legs"><input type="radio" name="attack" value="3" id="attack__legs">Legs</label>
-        </div>
-        <button  type="submit" id="go">Go</button>
+        <button  type="submit" id="go" class="menu__btn">Fight</button>
     </div>
     <div class="rival">
-        <div class="health" id="rivalHealth"></div>
+        <div class="health rival__health" id="rivalHealth"></div>
         <div class="rival__characters">
             <h1>Rival</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="#ffffff" fill-opacity="0"></path><g class="" transform="translate(0,0)" style=""><path d="M267.9 330.5h-23.8L232 289.6l-63.8-19.8 1 39.4 41.9 47.3 16.1-14.3L239.4 484 130.2 361.8l19.4-58.2-10.4-125.2 23.1-9.8c18.4 71.3 73.1 96.4 73.1 96.4l20.6-28.9 20.6 28.9s54.7-25.1 73.1-96.4l23.1 9.8-10.4 125.2 19.4 58.2L272.6 484l12.2-141.8 16.1 14.3 41.9-47.3 1-39.4-63.8 19.8zm125.8 64.8L318.9 472l56.8-28 6.1 24 51.6-36zm-275.4 0 74.8 76.7-56.8-28-6.1 24-51.6-36zm266.5-117.7L486 219.3C506 31 432.4 18.7 360.5 58.7c0 0 114.1-27.7 66.1 109.4l-35.8 14.7zm-257.6 0L25.96 219.3C6 31 79.61 18.7 151.5 58.7c0 0-114.14-27.7-66.12 109.4l35.82 14.7zM256 125.9l67.5 41.8s-3.2 35-42.4 64.7L256 180.7l-25.1 51.7c-39.2-29.7-42.4-64.7-42.4-64.7z" fill="#000000" fill-opacity="1"></path></g></svg>
         </div>
     </div>
 </div>

@@ -2,18 +2,41 @@
      margin: 0;
      font:400 14px/18px Arial;
      color: black;
-     padding: 50px 80px;
  }
+.logo{
+    display: flex;
+    background-color: #343434;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.logo__heading{
+    font-size: 44px;
+    letter-spacing: 4px;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
 .block{
+    padding: 50px 80px;
     display: flex;
     justify-content: space-between;
+    background-color: lightgray;
+    height: 100vh;
+    width: 100%vw;
 }
 .player{
+    border: 2px solid black;
     width: 110px;
     height: 210px;
-    background-color: lightgray;
-    text-align: center;
+    background-color: lightblue;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .health{
     width: 100px;
@@ -38,28 +61,47 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-
+    max-height: 70vh;
+}
+.menu > svg{
+    width: 50px;
+    height: 50px;
 }
 .menu__text{
-    width: 200px;
-    height: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    width: 300px;
+    height: 50px;
     background-color: darkgrey;
     border: 2px solid black;
+    padding: 5px;
+    overflow: auto;
+}
+.menu__fight{
+    display: flex;
+    gap: 50px;
 }
 .menu__block, .menu__attack{
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
+    padding: 10px 25px;
+}
+.menu__btn{
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    font-weight: 700;
 }
 
 
 .rival{
+    border: 2px solid black;
     padding: 20px;
     width: 110px;
     height: 210px;
-    background-color: lightblue;
-    text-align: center;
-}
-
-underfined{
-    display: none;
+    background-color: lightpink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
