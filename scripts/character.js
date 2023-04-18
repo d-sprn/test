@@ -1,60 +1,89 @@
+'use strict'
+
 const defaultSettings = {
-  hp: 100,
-  attack: 20,
+    hp: 100,
+    attack: 20,
 };
 
-export class Player {
-  name = null;
+class Player {
+    name = null;
 
-  hp = 0;
+    hp = 0;
 
-  attack = 0;
+    attack = 0;
 
-  block = 0;
+    killed = false;
 
-  killed = false;
-
-  constructor(name, settings = null) {
-    const { hp, attack, block } = { ...defaultSettings, ...settings };
-    this.name = name;
-    this.hp = hp;
-    this.attack = attack;
-    this.block = block;
-  }
-
-  damage(attack) {
-    const newHp = this.hp - (attack - this.block);
-
-    if (newHp > 0) {
-      this.hp = newHp;
-    } else {
-      this.hp = 0;
-      this.killed = true;
+    constructor(name, settings = null) {
+        const { hp, attack } = { ...defaultSettings, ...settings };
+        this.name = name;
+        this.hp = hp;
+        this.attack = attack;
     }
-  }
 
-  hit(player) {
-    player.damage(this.attack);
-    this.damage(player.attack);
-  }
+    playerAttackBlock() {
+        const $attackPlayerRadio = Array.from(
+            document.querySelectorAll(".menu__attack input")
+        ).indexOf(document.querySelector(".menu__attack input:checked"));
+        const $blockPlayerRadio = Array.from(
+            document.querySelectorAll(".menu__block input")
+        ).indexOf(document.querySelector(".menu__block input:checked"));
+        return {
+            attackPlayer: $attackPlayerRadio,
+            blockPlayer: $blockPlayerRadio,
+        };
+    }
+
+    playerHP() {
+        if (
+            player.playerAttackBlock().blockPlayer ===
+            rival.rivalAttackBlock().attackRival
+        ) {
+            return player.hp;
+        }
+        return (player.hp -= rival.attack);
+    }
+
+    playerHealthBar() {
+        return ($playerDamage.style.width = `${player.hp}%`);
+    }
 }
 
-// import { Player } from "./player";
+class Rival {
+    name = null;
 
-const stats = (...players) => players.reduce(
-  (acc, p) => `${acc}${p.name} (HP:${p1.hp}, ${p1.killed ? 'killed' : 'alive'}) `,
-  '',
-);
+    hp = 0;
 
-const p1 = new Player('player1');
-const p2 = new Player('player2', { hp: 100, attack: 35 });
+    attack = 0;
 
-console.log(stats(p1, p2));
-p1.hit(p2);
-console.log(stats(p1, p2));
-p1.hit(p2);
-console.log(stats(p1, p2));
-p2.hit(p1);
-console.log(stats(p1, p2));
-p2.hit(p1);
-console.log(stats(p1, p2));
+    killed = false;
+
+    constructor(name, settings = null) {
+        const {hp, attack} = {...defaultSettings, ...settings};
+        this.name = name;
+        this.hp = hp;
+        this.attack = attack;
+    }
+
+    rivalAttackBlock() {
+        return {
+            attackRival: Math.floor(Math.random() * 5),
+            blockRival: Math.floor(Math.random() * 5)
+        };
+    }
+
+    rivalHP = () => {
+        if (
+            rival.rivalAttackBlock().blockRival ===
+            player.playerAttackBlock().attackPlayer
+        ) {
+            return rival.hp;
+        }
+        return (rival.hp -= player.attack);
+    };
+
+    rivalHealthBar() {
+        return ($rivalDamage.style.width = `${rival.hp}%`);
+    }
+
+}
